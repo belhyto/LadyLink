@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign inl</title>
+    <link rel="stylesheet" href="index1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- NAVBAR CREATION -->
+   <header class="header">
+    <nav style="float: right" class="navbar">
+        <a style="text-align: right" href="#">Home</a>
+          <a style="text-align: right" href="#">About</a>
+    </nav>
+   </header>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="login-section">
+            <div class="form-box login">
+                <form action="">
+                    <h2>Sign In</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input id="login_email" type="email" required >
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input id="login_password" type="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox">Remember Me</label>
+                        <a href="#">Forget Password</a>
+                    </div>
+                    <button class="btn" id="login">Login In</button>
+                    <div class="create-account">
+                        <p>Create A New Account? <a href="#" class="register-link" >Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <form action="">
+                    <h2>Sign Up</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" required>
+                        <label >Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input id="email" type="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input id="password" type="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox">I agree with this statment</label>
+                    </div>
+                    <button class="btn" id="register">Sign Up</button>
+                    <div class="create-account">
+                        <p>Already Have An Account? <a href="#" class="login-link" >Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+     <!-- SIGN UP FORM CREATION -->
+    <script src="index1.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        const firebaseConfig = {
+          apiKey: "AIzaSyDIUhFTQBm2cf4hSenXJPSBkX6d0e4pLfU",
+          authDomain: "ladylink-6315e.firebaseapp.com",
+          projectId: "ladylink-6315e",
+          storageBucket: "ladylink-6315e.appspot.com",
+          messagingSenderId: "648103263960",
+          appId: "1:648103263960:web:4a43f11c0ac6c52d0f21ad",
+          measurementId: "G-H3PHGRB7D6"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        
+        console.log(app);      
+	  //----- Login code start	  
+	  document.getElementById("login").addEventListener("click", function() {
+		  var email =  document.getElementById("login_email").value;
+		  var password = document.getElementById("login_password").value;
+
+		  signInWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user); /*alert(user.email+" Login successfully!!!");
+		    document.getElementById('logout').style.display = 'block';*/
+		    
+		    window.location.href = "../HomePage/p_index.html";
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    console.log(errorMessage);
+		    alert(errorMessage);
+		  });		  		  
+	  }); 
+	  //----- End
+  //----- New Registration code start	  
+	  document.getElementById("register").addEventListener("click", function() {
+		  var email =  document.getElementById("email").value;
+		  var password = document.getElementById("password").value;
+		  //For new registration
+		  createUserWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    //console.log(user);
+		    //alert("Registration successfully!!");
+		    // ...
+            window.location.href = "../HomePage/p_index.html";
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    // ..
+		    console.log(errorMessage);
+		    alert(error);
+		  });		  		  
+	  });
+	  //----- End
+
+      </script>
+</body>
+
+</html>
