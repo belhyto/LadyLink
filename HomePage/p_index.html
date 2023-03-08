@@ -26,8 +26,7 @@
 
     <nav class="navbar">
         <a href="#home">home</a>
-        <a href="#forum">forum</a>
-        <a href="#chat">chat</a>
+        <a href="../Forum/f_index.html">forum</a>
         <a href="#about us">about us</a>
     </nav>
 
@@ -36,7 +35,6 @@
 <!-- header section ends -->
 
 <!-- home section starts  -->
-
 <section class="home" id="home">
 
     <div class="content">
@@ -54,13 +52,12 @@
       <div class="box-container">
   
           <div class="box">
-              <img src="../HomePage/Assets/profile-pic.jpg" alt="">
+              <img src="profile-pic.jpg" alt="">
               <h3>Your details</h3>
               <p>Name</p>
           </div>
 
 </section>
-
 <!-- home section ends -->
 
 <!-- forum section starts  -->
@@ -74,36 +71,36 @@
         <div class="box">
             <img src="../HomePage/Assets/f-icon1.png" alt="">
             <h3>Forum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="#" class="btn">Click here!</a>
+            <p>LadyLink provides you a platform where people across the globe can come together to exchange ideas and views on a particular issue.</p>
+            <a href="../Forum/f_index.html" class="btn">Click here!</a>
         </div>
 
         <div class="box">
             <img src="../HomePage/Assets/f-icon2.png" alt="">
             <h3>Events</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+            <p>Events showcases a list of historical moments that women have created but which is still unknown to us.</p>
             <a href="../Events/n_index.html" class="btn">Click here!</a>
         </div>
 
         <div class="box">
             <img src="../HomePage/Assets/f-icon3.png" alt="">
             <h3>Your rights!</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="#" class="btn">Click here!</a>
+            <p>We are all entitled to human rights. But most of us are unaware of these rights especially women. Your Rights1 will help you to know them.</p>
+            <a href="../Rights/rights.html" class="btn">Click here!</a>
         </div>
 
         <div class="box">
             <img src="../HomePage/Assets/f-icon4.png" alt="">
             <h3>Menstrual advice</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="#" class="btn">Click here!</a>
+            <p>Menstrual advice provides you with information related to menstrual cycle, healthy habits and diet to be followed for a better health during your periods.</p>
+            <a href="../Menstruation/menstruation.html" class="btn">Click here!</a>
         </div>
 
         <div class="box">
             <img src="../HomePage/Assets/f-icon5.png" alt="">
             <h3>Need help?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="#" class="btn">Click here!</a>
+            <p>This page aims to serve its readers as a self-help guide. Thus we provide you with helpline numbers in case you need to reach out to seek help.</p>
+            <a href="../HelpLines/helpline.html" class="btn">Click here!</a>
         </div>
 
     </div>
@@ -120,27 +117,27 @@
         <img src="../HomePage/Assets/contact-img.png" alt="">
     </div>
 
-    <form action="">
+    <form action="" id="ContactForm">
 
         <h1 class="heading">contact us</h1>
 
         <div class="inputBox">
-            <input type="text" required>
+            <input id="name" type="text" required>
             <label>name</label>
         </div>
 
         <div class="inputBox">
-            <input type="email" required>
+            <input id="emailId" type="email" required>
             <label>email</label>
         </div>
 
         <div class="inputBox">
-            <input type="number" required>
+            <input id="number" type="number" required>
             <label>phone</label>
         </div>
 
         <div class="inputBox">
-            <textarea required name="" id="" cols="30" rows="10"></textarea>
+            <textarea required name="" id="msg" cols="30" rows="10"></textarea>
             <label>message</label>
         </div>
 
@@ -160,13 +157,13 @@
 
         <div class="box">
             <h3>about us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur rerum consectetur architecto ad tempora blanditiis quo aliquid inventore a.</p>
+            <p>LadyLink is an interactive community website that interconnects women from all around the world to join hands and make society better for all. We hope to make society more developed with our web application.</p>
         </div>
 
         <div class="box">
             <h3>quick links</h3>
             <a href="#">home</a>
-            <a href="#">features</a>
+            <a href="#">forum</a>
             <a href="#">about</a>
             <a href="#">contact</a>
         </div>
@@ -183,11 +180,11 @@
             <h3>contact info</h3>
             <div class="info">
                 <i class="fas fa-phone"></i>
-                <p> +123-456-7890 <br> +111-2222-333 </p>
+                <p> +123-456-7890 </p>
             </div>
             <div class="info">
                 <i class="fas fa-envelope"></i>
-                <p> example@gmail.com <br> example@gmail.com </p>
+                <p> Algo4X@gmail.com </p>
             </div>
             <div class="info">
                 <i class="fas fa-map-marker-alt"></i>
@@ -197,8 +194,58 @@
 
     </div>
 
-    <h1 class="credit"> &copy; copyright @ 2021 by mr. web designer </h1>
+    <h1 class="credit"> &copy; copyright @ 2023 by Algo4X </h1>
 
 </div>
 
 <!-- footer section ends -->
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyDIUhFTQBm2cf4hSenXJPSBkX6d0e4pLfU",
+    authDomain: "ladylink-6315e.firebaseapp.com",
+    databaseURL: "https://ladylink-6315e-default-rtdb.firebaseio.com",
+    projectId: "ladylink-6315e",
+    storageBucket: "ladylink-6315e.appspot.com",
+    messagingSenderId: "648103263960",
+    appId: "1:648103263960:web:4a43f11c0ac6c52d0f21ad",
+    measurementId: "G-H3PHGRB7D6"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  var ContactDB = firebase.database().ref("ContactForm");
+  document.getElementById("ContactForm").addEventListener("submit", submitForm);
+  function submitForm(e) {
+    e.preventDefault();
+  
+    var name = getElementVal("name");
+    var emailId = getElementVal("emailId");
+    var number = getElementVal("number");
+    var number = getElementVal("msg");
+    saveMessages(name, emailId, number,msg);
+
+  
+    //   reset the form
+    document.getElementById("forumPost").reset();
+  }
+  
+  const saveMessages = (name, emailId, number,msg ) => {
+    var newContactForm = ForumPostDB.push();
+  
+    newContactForm.set({
+        name: name,
+        emailId: emailId,
+        number: number,
+        number: number,
+        msg:msg,
+    });
+  };
+  
+</script>
+</body>
+
+</html>

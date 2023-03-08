@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="postSheet.css">
+</head>
+
+<body>
+    <header>
+        <a href="#logo" class="logo"><span1>Lady</span1><span2>Link •New Post</span2></a>
+    
+        <a href="#" class="logo"></a>
+    
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar" class="fas fa-bars"></label>
+    
+        <nav class="navbar">
+            <a href="../HomePage/p_index.html">home</a>
+            <a href="f_index.html">forum</a>
+
+            <a href="#about us">about us</a>
+        </nav>
+    
+    </header>
+    <div class="container">
+        <form action="" id="forumPost">
+            <div class="alert">Your message sent</div>
+
+            <div class="inputBox">
+                <input type="text" id="uname" placeholder="A random name...." />
+            </div>
+
+            <div class="inputBox">
+                <input type="text" id="postTitle" placeholder="Post title....." />
+            </div>
+
+            <div class="inputBox">
+                <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+
+            <div class="inputBox">
+                <button id="Submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
